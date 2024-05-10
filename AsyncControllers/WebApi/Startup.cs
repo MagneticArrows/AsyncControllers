@@ -1,5 +1,7 @@
 ﻿using Service;
 using Model.DB;
+using System.Reflection;
+using AsyncControllers.DIManager;
 
 public static class Startup
 {
@@ -16,6 +18,7 @@ public static class Startup
     {
         services.AddSingleton<IExampleService, ExampleService>();
         services.AddSingleton<IDbManager, DbManager>();
+        services.SetAsyncControllersRegistration();
     }
 }
 

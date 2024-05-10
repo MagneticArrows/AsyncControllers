@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AsyncControllers\AsyncControllers.csproj" />
     <ProjectReference Include="..\Contracts\Contracts.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
