@@ -1,13 +1,16 @@
 ﻿using Service;
 using Model.DB;
-using System.Reflection;
 using AsyncControllers.DIManager;
+using AsyncControllers.Filters;
 
 public static class Startup
 {
     public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
-        services.AddControllers();
+        services.AddControllers(options =>
+        {
+            options.Filters.Add<AsyncifyActionFilter>();
+        });
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddSingleton(configuration);
